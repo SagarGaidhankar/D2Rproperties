@@ -1,7 +1,10 @@
 
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function PropertySearch() {
+  const navigate = useNavigate();
+
   const [activeTab, setActiveTab] = useState("buy");
 
   const [filters, setFilters] = useState({
@@ -14,8 +17,8 @@ function PropertySearch() {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    setFilters((previousFilters) => ({
-      ...previousFilters,
+    setFilters((previous) => ({
+      ...previous,
       [name]: value,
     }));
   };
@@ -23,20 +26,27 @@ function PropertySearch() {
   const handleSearch = (event) => {
     event.preventDefault();
 
-    console.log({
-      type: activeTab,
-      ...filters,
+    if (activeTab === "sell") {
+      navigate("/sell");
+      return;
+    }
+
+    const params = new URLSearchParams();
+
+    Object.entries(filters).forEach(([key, value]) => {
+      if (value) {
+        params.set(key, value);
+      }
     });
 
-    // We'll connect this to the property API later.
+    navigate(`/buy?${params.toString()}`);
   };
 
   return (
-    <section className="relative z-10 mx-auto -mt-8 max-w-7xl px-4 sm:px-6">
+    <section id="buy" className="relative z-10 mx-auto -mt-8 max-w-7xl px-4 sm:px-6">
 
       <div className="rounded-xl bg-white p-4 shadow-xl sm:p-5">
 
-        {/* Buy / Sell tabs */}
         <div className="mb-5 flex gap-3">
           <button
             type="button"
@@ -47,11 +57,10 @@ function PropertySearch() {
                 : "border border-gray-300 text-gray-700"
             }`}
           >
-            🏠 Buy
+            Buy
           </button>
 
           <button
-            id="sell"
             type="button"
             onClick={() => setActiveTab("sell")}
             className={`rounded-lg px-8 py-2 font-semibold ${
@@ -60,7 +69,7 @@ function PropertySearch() {
                 : "border border-gray-300 text-gray-700"
             }`}
           >
-            🔑 Sell
+            Sell
           </button>
         </div>
 
@@ -71,7 +80,7 @@ function PropertySearch() {
               name="location"
               value={filters.location}
               onChange={handleChange}
-              className="min-w-0 rounded-lg border border-gray-300 p-3 outline-none focus:border-green-800"
+              className="min-w-0 rounded-lg border p-3"
             >
               <option value="">Location</option>
               <option value="Kalaburagi">Kalaburagi</option>
@@ -83,7 +92,7 @@ function PropertySearch() {
               name="propertyType"
               value={filters.propertyType}
               onChange={handleChange}
-              className="min-w-0 rounded-lg border border-gray-300 p-3 outline-none focus:border-green-800"
+              className="min-w-0 rounded-lg border p-3"
             >
               <option value="">Property Type</option>
               <option value="Apartment">Apartment</option>
@@ -96,7 +105,7 @@ function PropertySearch() {
               name="budget"
               value={filters.budget}
               onChange={handleChange}
-              className="min-w-0 rounded-lg border border-gray-300 p-3 outline-none focus:border-green-800"
+              className="min-w-0 rounded-lg border p-3"
             >
               <option value="">Budget</option>
               <option value="below-25">Below ₹25 Lakhs</option>
@@ -109,20 +118,20 @@ function PropertySearch() {
               name="bhk"
               value={filters.bhk}
               onChange={handleChange}
-              className="min-w-0 rounded-lg border border-gray-300 p-3 outline-none focus:border-green-800"
+              className="min-w-0 rounded-lg border p-3"
             >
               <option value="">BHK</option>
-              <option value="1">1 BHK</option>
-              <option value="2">2 BHK</option>
-              <option value="3">3 BHK</option>
-              <option value="4+">4+ BHK</option>
+              <option value="1 BHK">1 BHK</option>
+              <option value="2 BHK">2 BHK</option>
+              <option value="3 BHK">3 BHK</option>
+              <option value="4+ BHK">4+ BHK</option>
             </select>
 
             <button
               type="submit"
-              className="rounded-lg bg-green-900 px-5 py-3 font-semibold text-white transition hover:bg-green-800"
+              className="rounded-lg bg-green-900 px-5 py-3 font-semibold text-white hover:bg-green-800"
             >
-              🔍 Search Properties
+              Search Properties
             </button>
 
           </div>

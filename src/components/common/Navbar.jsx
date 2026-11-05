@@ -14,7 +14,7 @@ function Navbar() {
         {/* Brand */}
         <Link to="/" className="flex flex-col" onClick={closeMenu}>
           <span className="text-2xl font-extrabold text-green-900">
-            Belora
+            NIDHI
           </span>
           <span className="text-xs text-gray-500">
             Find · Buy · Belong
@@ -40,12 +40,13 @@ function Navbar() {
             ♡
           </button>
 
-          <button
-            type="button"
-            className="hidden rounded-full bg-green-900 px-5 py-2 text-white sm:block"
+          {/* Desktop Login */}
+          <Link
+            to="/admin/login"
+            className="hidden rounded-full bg-green-900 px-5 py-2 text-white hover:bg-green-800 sm:block"
           >
             Login
-          </button>
+          </Link>
 
           {/* Mobile menu */}
           <button
@@ -70,12 +71,13 @@ function Navbar() {
             <a href="#about" onClick={closeMenu}>About</a>
             <a href="#contact" onClick={closeMenu}>Contact</a>
 
-            <button
-              type="button"
-              className="w-full rounded-lg bg-green-900 px-5 py-2 text-white"
+            <Link
+              to="/admin/login"
+              onClick={closeMenu}
+              className="w-full rounded-lg bg-green-900 px-5 py-2 text-center text-white"
             >
               Login
-            </button>
+            </Link>
           </div>
         </div>
       )}
