@@ -154,7 +154,7 @@ function Sell() {
 
           <p>
             Share your property details and connect with genuine
-            buyers through NIDHI.
+            buyers through NIDHI properties.
           </p>
         </div>
 

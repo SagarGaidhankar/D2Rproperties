@@ -36,7 +36,7 @@ function AdminLogin() {
 
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-gray-900">
-            NIDHI
+            NIDHI properties
           </h1>
           <p className="text-gray-500 mt-2">
             Admin Portal

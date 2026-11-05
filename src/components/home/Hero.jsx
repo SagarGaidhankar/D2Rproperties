@@ -33,12 +33,12 @@ function Hero() {
             in Kalaburagi City.
           </p>
 
-          <a
-            href="#buy"
+          <Link
+            to="/buy"
             className="mt-7 inline-block rounded-lg bg-green-900 px-8 py-3 font-semibold text-white transition hover:bg-green-800"
           >
             Explore Properties →
-          </a>
+          </Link>
         </div>
 
         {/* Property promotion */}

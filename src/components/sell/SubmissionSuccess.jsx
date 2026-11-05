@@ -11,7 +11,7 @@ function SubmissionSuccess() {
       <h1>Your property details have been submitted!</h1>
 
       <p>
-        Thank you for choosing NIDHI. Your property submission
+        Thank you for choosing NIDHI properties. Your property submission
         has been captured successfully in this frontend demo.
       </p>
 

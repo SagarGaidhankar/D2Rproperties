@@ -14,18 +14,20 @@ function Navbar() {
         {/* Brand */}
         <Link to="/" className="flex flex-col" onClick={closeMenu}>
           <span className="text-2xl font-extrabold text-green-900">
-            NIDHI
+            NIDHI properties
           </span>
           <span className="text-xs text-gray-500">
-            Find · Buy · Belong
+            Nurturing | Inspirations | Dreams | Homes | Investments
           </span>
         </Link>
 
         {/* Desktop navigation */}
         <div className="hidden items-center gap-8 font-medium md:flex">
           <Link to="/" className="text-green-900">Home</Link>
-          <a href="#buy" className="text-gray-700 hover:text-green-800">Buy</a>
-          {/* <a href="#sell" className="text-gray-700 hover:text-green-800">Sell</a> */}
+          <Link to="/buy" className="text-gray-700 hover:text-green-800">
+            Buy
+          </Link>
+          {/* <Link to="/sell" className="text-gray-700 hover:text-green-800">Sell</Link> */}
           <Link to="/sell" className="text-gray-700 hover:text-green-800">
             Sell
           </Link>
@@ -69,8 +71,10 @@ function Navbar() {
         <div className="border-t bg-white px-5 py-4 md:hidden">
           <div className="flex flex-col gap-4 font-medium">
             <Link to="/" onClick={closeMenu}>Home</Link>
-            <a href="#buy" onClick={closeMenu}>Buy</a>
-            {/* <a href="#sell" onClick={closeMenu}>Sell</a> */}
+            <Link to="/buy" onClick={closeMenu}>
+              Buy
+            </Link>
+            {/* <Link to="/sell" onClick={closeMenu}>Sell</Link> */}
             <Link to="/sell" onClick={closeMenu}>
               Sell
             </Link>
