@@ -25,7 +25,10 @@ function Navbar() {
         <div className="hidden items-center gap-8 font-medium md:flex">
           <Link to="/" className="text-green-900">Home</Link>
           <a href="#buy" className="text-gray-700 hover:text-green-800">Buy</a>
-          <a href="#sell" className="text-gray-700 hover:text-green-800">Sell</a>
+          {/* <a href="#sell" className="text-gray-700 hover:text-green-800">Sell</a> */}
+          <Link to="/sell" className="text-gray-700 hover:text-green-800">
+            Sell
+          </Link>
           <a href="#about" className="text-gray-700 hover:text-green-800">About</a>
           <a href="#contact" className="text-gray-700 hover:text-green-800">Contact</a>
         </div>
@@ -67,7 +70,10 @@ function Navbar() {
           <div className="flex flex-col gap-4 font-medium">
             <Link to="/" onClick={closeMenu}>Home</Link>
             <a href="#buy" onClick={closeMenu}>Buy</a>
-            <a href="#sell" onClick={closeMenu}>Sell</a>
+            {/* <a href="#sell" onClick={closeMenu}>Sell</a> */}
+            <Link to="/sell" onClick={closeMenu}>
+              Sell
+            </Link>
             <a href="#about" onClick={closeMenu}>About</a>
             <a href="#contact" onClick={closeMenu}>Contact</a>
 

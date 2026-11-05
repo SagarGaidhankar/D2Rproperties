@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 function Hero() {
   return (
@@ -54,12 +55,15 @@ function Hero() {
               Reach genuine buyers in Kalaburagi.
             </p>
 
-            <a
+            {/* <a
               href="#sell"
               className="mt-5 inline-block rounded-full bg-yellow-500 px-7 py-3 font-bold text-green-950 hover:bg-yellow-400"
             >
               Post Now →
-            </a>
+            </a> */}
+            <Link to="/sell" className="post-now-btn mt-5 inline-block rounded-full bg-yellow-500 px-7 py-3 font-bold text-green-950 hover:bg-yellow-400">
+              Post Now →
+            </Link>
 
             <p className="mt-3 text-xs text-gray-500">
               Free property listing

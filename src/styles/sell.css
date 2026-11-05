@@ -1,0 +1,714 @@
+
+/* =========================================
+   NIDHI - PROPERTY SUBMISSION FORM
+   ========================================= */
+
+/* Base */
+
+.sell-page,
+.sell-page *,
+.submission-success,
+.submission-success * {
+  box-sizing: border-box;
+}
+
+.sell-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 55px 20px 80px;
+  background: #f6f8f6;
+  font-family: inherit;
+  color: #183b27;
+}
+
+.sell-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   PAGE HEADING
+   ========================================= */
+
+.sell-heading {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.sell-eyebrow {
+  display: inline-block;
+  color: #0d5630;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.sell-heading h1 {
+  color: #06351d;
+  font-size: 36px;
+  font-weight: 750;
+  line-height: 1.3;
+  margin: 10px 0 12px;
+}
+
+.sell-heading p {
+  color: #64748b;
+  font-size: 16px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* =========================================
+   MAIN FORM CARD
+   ========================================= */
+
+.sell-form-card {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #e4eae5;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 8px 35px rgba(0, 0, 0, 0.05);
+}
+
+/* =========================================
+   STEPPER
+   ========================================= */
+
+.sell-stepper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  width: 100%;
+  padding-bottom: 25px;
+  margin-bottom: 35px;
+  border-bottom: 1px solid #e5eae6;
+}
+
+.sell-step {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #94a3b8;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.step-number {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #edf1ed;
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.sell-step.active {
+  color: #0d5630;
+  font-weight: 700;
+}
+
+.sell-step.active .step-number {
+  background: #0d5630;
+  color: #ffffff;
+}
+
+.sell-step.completed {
+  color: #0d5630;
+  font-weight: 600;
+}
+
+.sell-step.completed .step-number {
+  background: #e2f3e7;
+  color: #0d5630;
+}
+
+/* =========================================
+   FORM CONTENT
+   ========================================= */
+
+.sell-form-content {
+  width: 100%;
+  min-height: 300px;
+}
+
+.sell-form-content h2 {
+  color: #123d27;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+
+.form-subtitle {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0 0 28px;
+}
+
+/* =========================================
+   PROPERTY TYPE CARDS
+   ========================================= */
+
+.property-type-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  width: 100%;
+  margin-top: 25px;
+}
+
+.property-type-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  width: 100%;
+  min-height: 170px;
+  padding: 24px;
+  background: #ffffff;
+  border: 1.5px solid #dce5dd;
+  border-radius: 12px;
+  color: #173c27;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+.property-type-card:hover {
+  border-color: #0d5630;
+  background: #f8fcf8;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(13, 86, 48, 0.08);
+}
+
+.property-type-card.selected {
+  border: 2px solid #0d5630;
+  background: #f1f8f3;
+  box-shadow: 0 4px 15px rgba(13, 86, 48, 0.08);
+}
+
+.property-type-icon {
+  display: block;
+  font-size: 34px;
+  margin-bottom: 12px;
+}
+
+.property-type-card h3 {
+  color: #123d27;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.property-type-card p {
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.property-selected {
+  display: inline-block;
+  margin-top: 12px;
+  color: #0d5630;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* =========================================
+   FORM INPUTS
+   ========================================= */
+
+.sell-fields-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  width: 100%;
+  margin-top: 25px;
+}
+
+.sell-field {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 9px;
+}
+
+.sell-field.full-width {
+  grid-column: 1 / -1;
+}
+
+.sell-field label {
+  color: #173c27;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.sell-field input,
+.sell-field select,
+.sell-field textarea {
+  display: block;
+  width: 100%;
+  min-height: 46px;
+  padding: 12px 14px;
+  border: 1px solid #dce4dd;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #263b30;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sell-field input::placeholder,
+.sell-field textarea::placeholder {
+  color: #a0a9a2;
+}
+
+.sell-field input:focus,
+.sell-field select:focus,
+.sell-field textarea:focus {
+  border-color: #0d5630;
+  box-shadow: 0 0 0 3px rgba(13, 86, 48, 0.09);
+}
+
+.sell-field textarea {
+  min-height: 120px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.description-field {
+  margin-top: 25px;
+}
+
+/* =========================================
+   LOCATION NOTE
+   ========================================= */
+
+.location-note,
+.owner-privacy-note {
+  background: #f0f7f1;
+  border: 1px solid #dcecdf;
+  border-radius: 9px;
+  padding: 16px;
+  margin-top: 25px;
+  color: #285b3c;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.location-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.location-note p {
+  margin: 0;
+}
+
+/* =========================================
+   IMAGE AND VIDEO UPLOAD
+   ========================================= */
+
+.media-upload-section {
+  margin-top: 35px;
+}
+
+.media-upload-section h3 {
+  color: #173c27;
+  font-size: 17px;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+
+.media-upload-section > p {
+  color: #64748b;
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+
+.upload-box,
+.video-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 30px 15px;
+  border: 2px dashed #b9cbbd;
+  border-radius: 12px;
+  background: #f8fbf8;
+  color: #285b3c;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.upload-box:hover,
+.video-upload:hover {
+  border-color: #0d5630;
+  background: #f0f7f1;
+}
+
+.upload-box input,
+.video-upload input {
+  display: none;
+}
+
+.upload-icon {
+  font-size: 32px;
+}
+
+.upload-box strong {
+  font-size: 15px;
+}
+
+.upload-box span:last-child {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.image-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.image-preview {
+  position: relative;
+  width: 100%;
+  height: 130px;
+  border-radius: 9px;
+  overflow: hidden;
+  background: #edf1ed;
+}
+
+.image-preview img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-preview button {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 27px;
+  height: 27px;
+  border: none;
+  border-radius: 50%;
+  background: #dc2626;
+  color: #ffffff;
+  font-size: 19px;
+  cursor: pointer;
+}
+
+.video-heading {
+  margin-top: 30px !important;
+}
+
+.video-upload {
+  flex-direction: row;
+  margin-top: 12px;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.remove-video {
+  margin-top: 12px;
+  padding: 5px 0;
+  border: none;
+  background: none;
+  color: #dc2626;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* =========================================
+   OWNER DETAILS
+   ========================================= */
+
+.owner-privacy-note {
+  display: block;
+  line-height: 1.7;
+}
+
+/* =========================================
+   FORM FOOTER BUTTONS
+   ========================================= */
+
+.sell-form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  width: 100%;
+  margin-top: 40px;
+  padding-top: 25px;
+  border-top: 1px solid #e5eae6;
+}
+
+.back-button,
+.next-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.back-button {
+  border: 1px solid #d5ddd7;
+  background: #ffffff;
+  color: #334155;
+}
+
+.back-button:hover:not(:disabled) {
+  background: #f3f6f3;
+}
+
+.next-button {
+  border: 1px solid #0d5630;
+  background: #0d5630;
+  color: #ffffff;
+}
+
+.next-button:hover:not(:disabled) {
+  background: #084323;
+  border-color: #084323;
+}
+
+.back-button:disabled,
+.next-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* =========================================
+   VALIDATION
+   ========================================= */
+
+.field-error {
+  color: #dc2626;
+  font-size: 13px;
+  margin-top: 7px;
+}
+
+.validation-summary {
+  padding: 15px 18px;
+  margin-bottom: 22px;
+  border: 1px solid #fecdd3;
+  border-radius: 8px;
+  background: #fff1f2;
+  color: #be123c;
+  font-size: 14px;
+}
+
+.validation-summary ul {
+  padding-left: 20px;
+  margin: 8px 0 0;
+}
+
+.validation-summary li {
+  margin-bottom: 4px;
+}
+
+/* =========================================
+   PLACEHOLDER CONTENT
+   ========================================= */
+
+.coming-next {
+  min-height: 200px;
+  padding: 20px 0;
+}
+
+.coming-next p {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* =========================================
+   SUCCESS PAGE
+   ========================================= */
+
+.submission-success {
+  width: calc(100% - 40px);
+  max-width: 700px;
+  margin: 80px auto;
+  padding: 50px 30px;
+  background: #ffffff;
+  border: 1px solid #e5eae6;
+  border-radius: 16px;
+  box-shadow: 0 8px 35px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.success-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 75px;
+  height: 75px;
+  margin: 0 auto 25px;
+  border-radius: 50%;
+  background: #e8f5eb;
+  color: #0d5630;
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.submission-success h1 {
+  color: #06351d;
+  font-size: 30px;
+  line-height: 1.4;
+  margin: 15px 0;
+}
+
+.submission-success > p {
+  color: #64748b;
+  line-height: 1.7;
+}
+
+.success-info {
+  margin: 25px 0;
+  padding: 20px;
+  border-radius: 10px;
+  background: #f5f9f5;
+  color: #285b3c;
+  text-align: left;
+}
+
+.success-info p {
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+.success-home {
+  display: inline-flex;
+  text-decoration: none;
+}
+
+/* =========================================
+   TABLET RESPONSIVENESS
+   ========================================= */
+
+@media (max-width: 900px) {
+  .sell-stepper {
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 20px;
+  }
+
+  .sell-step {
+    min-width: 125px;
+  }
+
+  .sell-heading h1 {
+    font-size: 30px;
+  }
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+   ========================================= */
+
+@media (max-width: 600px) {
+  .sell-page {
+    padding: 35px 14px 55px;
+  }
+
+  .sell-heading {
+    margin-bottom: 25px;
+  }
+
+  .sell-heading h1 {
+    font-size: 25px;
+  }
+
+  .sell-heading p {
+    font-size: 14px;
+  }
+
+  .sell-form-card {
+    padding: 20px 16px;
+    border-radius: 12px;
+  }
+
+  .sell-form-content h2 {
+    font-size: 21px;
+  }
+
+  .property-type-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .property-type-card {
+    min-height: 145px;
+    padding: 20px;
+  }
+
+  .sell-fields-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .sell-field.full-width {
+    grid-column: auto;
+  }
+
+  .image-preview-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .image-preview {
+    height: 110px;
+  }
+
+  .sell-form-footer {
+    margin-top: 30px;
+    padding-top: 20px;
+  }
+
+  .back-button,
+  .next-button {
+    padding: 11px 18px;
+    font-size: 13px;
+  }
+
+  .submission-success {
+    margin: 40px auto;
+    padding: 35px 20px;
+  }
+
+  .submission-success h1 {
+    font-size: 24px;
+  }
+}
